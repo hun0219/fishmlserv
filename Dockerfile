@@ -16,5 +16,5 @@ COPY . /code/
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 # 서버실행시 커맨드 실행 ","가 띄워쓰기임
-CMD ["uvicorn", "src.fishmlserv.main:app", "--host", "0.0.0.0", "--port", "8765"]
+CMD ["uvicorn", "src.fishmlserv.main:app", "--host", "0.0.0.0", "--port", "8080"]
 # 포트를 내부적으로 열어준다 8765

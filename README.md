@@ -23,7 +23,10 @@ $ docker run -d -p 8877:8765 --name fishmlserv2 fishmlserv:0.4.0
 ```
 
 ### fly.io
+$ fly launch --no-deploy
 $ flyctl launch --name hun0219
+$ flyctl scale memory 256
+$ flyctl deploy
 
 ### Ref
 - https://curlconverter.com/python

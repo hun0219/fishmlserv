@@ -41,6 +41,9 @@ BUG_REPORT_URL="https://bugs.debian.org/"
 
 # 다시 호스트OS(WSL)로 exit
 root@f88123ed81dc: exit
+
+# 로그 확인
+$ sudo docker logs -f <CONTAINER ID|NAMES>
 ```
 
 ### fly.io

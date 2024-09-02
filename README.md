@@ -22,6 +22,9 @@ $ docker build -t fishmlserv:0.4.0
 $ docker run -d -p 8877:8765 --name fishmlserv2 fishmlserv:0.4.0
 ```
 
+### fly.io
+$ flyctl launch --name hun0219
+
 ### Ref
 - https://curlconverter.com/python
 

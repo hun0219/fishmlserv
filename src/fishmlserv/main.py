@@ -26,7 +26,7 @@ def fish(length: float, weight:float):
     """
     ### 모델 불러오기
     from fishmlserv.model.manager import get_model_path
-    with open("get_model_path", "rb") as f:
+    with open(get_model_path(), "rb") as f:
         fish_model = pickle.load(f)
 
     prediction = fish_model.predict([[length, weight]])

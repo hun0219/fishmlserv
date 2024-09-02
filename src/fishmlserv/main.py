@@ -1,6 +1,7 @@
 from typing import Union
 from fastapi import FastAPI
 import pickle
+from src.fishmlserv.model.manager import get_model_path
 
 app = FastAPI()
 
@@ -25,7 +26,6 @@ def fish(length: float, weight:float):
         dict: 물고기 종류를 담은 딕셔너리
     """
     ### 모델 불러오기
-    from fishmlserv.model.manager import get_model_path
     with open(get_model_path(), "rb") as f:
         fish_model = pickle.load(f)
 

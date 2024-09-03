@@ -1,6 +1,7 @@
 import pickle
 import typer
 from typer.colors import RED
+from fishmlserv.model.manager import get_model_path
 
 app = typer.Typer()
 
@@ -13,7 +14,7 @@ def prediction(
     Predict the type of fish based on its length and weight.
     """
     # 모델 로드
-    with open("/home/hun/code/fishmlserv/note/model.pkl", "rb") as f:
+    with open(get_model_path(), "rb") as f:
         fish_model = pickle.load(f)
 
     # 예측 수행

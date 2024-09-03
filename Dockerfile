@@ -19,8 +19,8 @@ COPY src/fishmlserv/main.py /code/
 
 # 컨테이너가 실행될때 requirements.txt안에꺼 설치 / .toml디펜던시 설정넣은거(.toml에 있음)
 #RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
-RUN pip install --no-cache-dir --upgrade git+https://github.com/hun0219/fishmlserv.git@0.8/hub
-#RUN pip install git+https://github.com/hun0219/fishmlserv.git@0.7/MANIFAST
+#RUN pip install --no-cache-dir --upgrade git+https://github.com/hun0219/fishmlserv.git@0.8/hub
+RUN pip install git+https://github.com/hun0219/fishmlserv.git@0.8/hub
 
 
 # 서버실행시 커맨드 실행 ","가 띄워쓰기임

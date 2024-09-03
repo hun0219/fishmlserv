@@ -19,6 +19,7 @@ $ uvicorn src.fishmlserv.main:app --host 0.0.0.0 --port 8949
 ### Docker
 ```bash
 $ docker build -t fishmlserv:0.4.0 .
+$ docker build --no-cache -t fishmlserv:0.7.10 .
 $ docker run -d -p 8877:8765 --name fishmlserv2 fishmlserv:0.4.0
 $ docker ps 
 CONTAINER ID   IMAGE              COMMAND                  CREATED          STATUS          PORTS                                       NAMES

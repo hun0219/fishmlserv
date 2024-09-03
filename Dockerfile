@@ -1,5 +1,6 @@
 #  컨테이너 만들때 3.11버전으로 만듦
-FROM python:3.11
+# 도커허브이미지 가따 쓰는거 #베이스 이미지
+FROM datamario24/python311scikitlearn-fastapi:1.0.0
 #FROM python:3.11.9-slim-bullseye
 #FROM python:3.11.9-slim
 #FROM python:3.11-alpine3.20
@@ -18,7 +19,7 @@ COPY src/fishmlserv/main.py /code/
 
 # 컨테이너가 실행될때 requirements.txt안에꺼 설치 / .toml디펜던시 설정넣은거(.toml에 있음)
 #RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
-RUN pip install --no-cache-dir --upgrade git+https://github.com/hun0219/fishmlserv.git@0.7/MANIFAST
+RUN pip install --no-cache-dir --upgrade git+https://github.com/hun0219/fishmlserv.git@0.8/hub
 #RUN pip install git+https://github.com/hun0219/fishmlserv.git@0.7/MANIFAST
 
 

@@ -25,7 +25,7 @@ def fish(length: float, weight:float):
     Returns:
         dict: 물고기 종류를 담은 딕셔너리
     """
-    ### 모델 불러오기
+    ### 모델 불러오기럼
     with open(get_model_path(), "rb") as f:
         fish_model = pickle.load(f)
 
@@ -44,6 +44,9 @@ def fish(length: float, weight:float):
 
 @app.get("/predict_fish")
 def fish(length: float, weight: float):
+    # 도커에서 model.pkl쓰려면 위 처럼 get_model_path() 함수 사용해야함
+    #with open(get_model_path(), "rb") as f:
+    #    fish_model = pickle.load(f)
     with open("/home/hun/code/fishmlserv/note/model.pkl", "rb") as f:
         fish_model = pickle.load(f)
 

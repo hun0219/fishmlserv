@@ -4,7 +4,7 @@
 #FROM python:3.11.9-slim-bullseye
 #FROM python:3.11.9-slim
 #FROM python:3.11-alpine3.20
-FROM leshgi2447/fishmlserv:1.6.0
+FROM leshgi2447/fishmlserv:1.1.0
 
 # docker 컨테이너 루트밑에 code 만듦
 WORKDIR /code

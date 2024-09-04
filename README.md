@@ -47,6 +47,23 @@ root@f88123ed81dc: exit
 $ sudo docker logs -f <CONTAINER ID|NAMES>
 ```
 
+### LB
+```bash
+- images
+$ docker build --no-cache -t ml-lb:1.5.0 LB
+```
+```bash
+- RUN
+$ docker run -d --name ml-1 fishmlserv:1.1.0
+$ docker run -d --name ml-2 fishmlserv:1.1.0
+$ docker run -d -p 8765:80 --name lb-2 --link ml-1 --link ml-2 ml-lb:1.5.0
+```
+```bash
+- logs
+$ docker logs -f ml-1
+$ docker logs -f ml-2
+```
+
 ### fly.io
 $ fly launch --no-deploy
 $ flyctl launch --name hun0219

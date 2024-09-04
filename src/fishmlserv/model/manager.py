@@ -19,10 +19,10 @@ def get_model_path():
     my_path = __file__
 
     dir_name = os.path.dirname(my_path)
-
+    
     #model_path = dir_name + "/" + "model.pkl" #아래와 같음
-    model_path = os.path.join(dir_name, "model.pkl")
-
+    model_path = os.path.join(dir_name, f"model.pkl")
+    
     ###################################################
     
     # 사용 fastapi main.py에서 아래와 같이 사용

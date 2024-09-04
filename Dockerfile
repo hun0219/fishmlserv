@@ -4,7 +4,7 @@
 #FROM python:3.11.9-slim-bullseye
 #FROM python:3.11.9-slim
 #FROM python:3.11-alpine3.20
-FROM leshgi2447/fishmlserv:1.1.0
+FROM leshgi2447/fishmlserv:1.6.0
 
 # docker 컨테이너 루트밑에 code 만듦
 WORKDIR /code
@@ -21,7 +21,7 @@ COPY src/fishmlserv/main.py /code/
 #@@@@ 모델 서빙만(의존성의 위 BASE 이미지에서 모두 설치 했다.)
 # 컨테이너가 실행될때 requirements.txt안에꺼 설치 / .toml디펜던시 설정넣은거(.toml에 있음)
 #RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
-RUN pip install --no-cache-dir --upgrade git+https://github.com/hun0219/fishmlserv.git@1.1.0/k
+RUN pip install --no-cache-dir --upgrade git+https://github.com/hun0219/fishmlserv.git@1.6.0/req
 #RUN pip install git+https://github.com/hun0219/fishmlserv.git@1.0.0/k
 
 # 위까지는 이미지를 만들때 처리됨

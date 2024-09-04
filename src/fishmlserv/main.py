@@ -3,6 +3,9 @@ from fastapi import FastAPI
 import pickle
 from fishmlserv.model.manager import get_model_path
 
+with open(get_model_path(), "rb") as f:
+    fish_model = pickle.load(f)
+
 app = FastAPI()
 
 @app.get("/")
@@ -26,8 +29,8 @@ def fish(length: float, weight:float):
         dict: 물고기 종류를 담은 딕셔너리
     """
     ### 모델 불러오기럼
-    with open(get_model_path(), "rb") as f:
-        fish_model = pickle.load(f)
+#    with open(get_model_path(), "rb") as f:
+#        fish_model = pickle.load(f)
 
     prediction = fish_model.predict([[length, weight]])
 
@@ -47,8 +50,8 @@ def fish(length: float, weight: float):
     # 도커에서 model.pkl쓰려면 위 처럼 get_model_path() 함수 사용해야함
     #with open(get_model_path(), "rb") as f:
     #    fish_model = pickle.load(f)
-    with open("/home/hun/code/fishmlserv/note/model.pkl", "rb") as f:
-        fish_model = pickle.load(f)
+#    with open("/home/hun/code/fishmlserv/note/model.pkl", "rb") as f:
+#        fish_model = pickle.load(f)
 
         if fish_model.predict([[length, weight]])[0] == 1:
             prediction="도미"
